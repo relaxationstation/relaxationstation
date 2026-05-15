@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relaxation Station - Nature ASMR & Peaceful Walks | Ben Crossland</title>
+    <meta name="description" content="Relaxing nature walk ASMR and historical ambience videos filmed throughout New Zealand. Slow down, switch off, and find peace.">
+    <meta name="keywords" content="ASMR, nature walks, relaxation, New Zealand, peaceful videos">
+    <meta property="og:title" content="Relaxation Station - Find Peace in Nature">
+    <meta property="og:description" content="Immersive nature ASMR videos from New Zealand's most serene landscapes.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --forest-dark: #1a3a2e;
+            --forest-medium: #2d5a47;
+            --forest-light: #4a7c6f;
+            --sage: #6b9080;
+            --cream: #f5f1e8;
+            --accent-green: #7cb342;
+            --text-dark: #1a1a1a;
+            --text-light: #f5f1e8;
+            --shadow: rgba(26, 58, 46, 0.15);
+        }
+
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Georgia', 'Garamond', serif;
+            background: linear-gradient(135deg, var(--forest-dark) 0%, var(--forest-medium) 100%);
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            backdrop-filter: blur(10px);
+            background: rgba(26, 58, 46, 0.95);
+            padding: 1.2rem 2rem;
+            z-index: 1000;
+            box-shadow: 0 2px 20px var(--shadow);
+        }
+
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--accent-green);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .logo::before { content: "🌿"; font-size: 1.5rem; }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2.5rem;
+        }
+
+        nav a {
+            color: var(--cream);
+            text-decoration: none;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s ease, text-shadow 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--accent-green);
+            text-shadow: 0 0 10px rgba(124, 179, 66, 0.5);
+        }
+
+        .hero {
+            margin-top: 60px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--forest-dark) 0%, rgba(45, 90, 71, 0.9) 100%);
+            padding: 3rem 2rem;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(123, 179, 66, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(106, 176, 128, 0.1) 0%, transparent 50%);
+            z-index: 0;
+        }
+
+        .hero .container {
+            max-width: 1000px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            color: var(--cream);
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            animation: slideInLeft 0.8s ease-out;
+        }
+
+        .hero-content .subtitle {
+            font-size: 1.3rem;
+            color: var(--accent-green);
+            margin-bottom: 2rem;
+            font-style: italic;
+            animation: slideInLeft 0.8s ease-out 0.2s backwards;
+        }
+
+        .hero-content p {
+            font-size: 1.1rem;
+            color: rgba(245, 241, 232, 0.9);
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            animation: slideInLeft 0.8s ease-out 0.4s backwards;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            animation: slideInLeft 0.8s ease-out 0.6s backwards;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: var(--accent-green);
+            color: var(--forest-dark);
+            box-shadow: 0 10px 30px rgba(124, 179, 66, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(124, 179, 66, 0.5);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--cream);
+            border: 2px solid var(--accent-green);
+        }
+
+        .btn-secondary:hover {
+            background: var(--accent-green);
+            color: var(--forest-dark);
+        }
+
+        .hero-image {
+            position: relative;
+            z-index: 2;
+            animation: slideInRight 0.8s ease-out;
+        }
+
+        .hero-image img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+            display: block;
+        }
+
+        .about {
+            padding: 6rem 2rem;
+            background: var(--cream);
+            position: relative;
+        }
+
+        .about .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.8rem;
+            color: var(--forest-dark);
+            margin-bottom: 3rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: "";
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--accent-green);
+            margin: 1rem auto 0;
+            border-radius: 2px;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+            margin-bottom: 3rem;
+        }
+
+        .about-text h2 {
+            font-size: 2rem;
+            color: var(--forest-medium);
+            margin-bottom: 1.5rem;
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            color: var(--text-dark);
+            line-height: 1.9;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-image { position: relative; }
+        .about-image img {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 4rem;
+            padding: 2rem;
+            background: rgba(123, 179, 66, 0.1);
+            border-radius: 15px;
+        }
+
+        .stat-item { text-align: center; }
+        .stat-number {
+            font-size: 2.5rem;
+            color: var(--accent-green);
+            font-weight: bold;
+        }
+        .stat-label {
+            color: var(--forest-dark);
+            margin-top: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .channel-story {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, var(--forest-light) 0%, var(--forest-medium) 100%);
+            color: var(--cream);
+        }
+
+        .channel-story .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .channel-story .section-title { color: var(--cream); }
+        .channel-story .section-title::after { background: var(--accent-green); }
+
+        .story-content {
+            font-size: 1.15rem;
+            line-height: 2;
+            margin-bottom: 2rem;
+        }
+
+        .story-content p { margin-bottom: 1.5rem; }
+        .story-content h3 {
+            margin-top: 2rem;
+            color: var(--accent-green);
+        }
+
+        .highlight {
+            color: var(--accent-green);
+            font-weight: bold;
+        }
+
+        .gallery {
+            padding: 6rem 2rem;
+            background: var(--cream);
+        }
+
+        .gallery .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            aspect-ratio: 1;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 45px rgba(0, 0, 0, 0.2);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .gallery-item::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(26, 58, 46, 0.3);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .gallery-item:hover::after { opacity: 1; }
+
+        .cta-section {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, var(--forest-dark) 0%, var(--forest-medium) 100%);
+            text-align: center;
+            color: var(--cream);
+        }
+
+        .cta-section .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+            line-height: 1.8;
+        }
+
+        footer {
+            background: var(--forest-dark);
+            color: var(--cream);
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        footer .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+
+        .footer-section h3 {
+            color: var(--accent-green);
+            margin-bottom: 1rem;
+        }
+
+        .footer-section p {
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        .footer-section a {
+            color: var(--cream);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover { color: var(--accent-green); }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            width: 40px;
+            height: 40px;
+            background: var(--accent-green);
+            border-radius: 50%;
+            align-items: center;
+            justify-content: center;
+            color: var(--forest-dark);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 1.2rem;
+        }
+
+        .social-links a:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(124, 179, 66, 0.4);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(245, 241, 232, 0.2);
+            padding-top: 2rem;
+            font-size: 0.9rem;
+        }
+
+        @keyframes slideInLeft {
+            from { opacity: 0; transform: translateX(-50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes slideInRight {
+            from { opacity: 0; transform: translateX(50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @media (max-width: 768px) {
+            nav ul { gap: 1.5rem; }
+            nav a { font-size: 0.8rem; }
+            .hero .container { grid-template-columns: 1fr; gap: 2rem; }
+            .hero-content h1 { font-size: 2.2rem; }
+            .cta-buttons { flex-direction: column; }
+            .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+            .stats { grid-template-columns: 1fr; }
+            .gallery-grid { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; }
+            .section-title { font-size: 2rem; }
+            .footer-content { grid-template-columns: 1fr; text-align: center; }
+            .social-links { justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a href="#home" class="logo">Relaxation Station</a>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#story">Story</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Find Peace in Nature's Embrace</h1>
+                <p class="subtitle">Slow down. Switch off. Breathe.</p>
+                <p>Discover immersive nature walk ASMR videos filmed across New Zealand's most serene landscapes. Created with intention to help you relax, focus, and reconnect with the natural world.</p>
+                <div class="cta-buttons">
+                    <a href="https://www.youtube.com/@Official-RelaxationStation/featured" class="btn btn-primary" target="_blank">Watch on YouTube</a>
+                    <a href="#story" class="btn btn-secondary">Learn My Story</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="images/nz-bush.jpg" alt="New Zealand Native Bush" loading="lazy">
+            </div>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="container">
+            <h2 class="section-title">About Ben Crossland</h2>
+            <div class="about-grid">
+                <div class="about-text">
+                    <h2>Explorer & Content Creator</h2>
+                    <p>My name is <span class="highlight">Ben Crossland</span>, I'm 25 years old, and I have an unquenchable passion for exploring the great outdoors. My heart belongs to New Zealand, where every corner reveals a new story waiting to be captured.</p>
+                    <p>For me, nature isn't just a backdrop—it's a way of life. Whether I'm hiking through native bush trails, standing at the edge of a quiet beach, or walking across rolling farmland, I find myself constantly inspired by the raw beauty of the environment around me.</p>
+                    <p>My mission through Relaxation Station is simple: to bring these experiences to you. I believe that in our fast-paced world, we all deserve moments of genuine peace and connection with nature. Through my carefully crafted videos, I want to help you slow down, breathe deeply, and experience the healing power of the natural world—right from your own home.</p>
+                </div>
+                <div class="about-image">
+                    <img src="images/ben-portrait.png" alt="Ben Crossland Portrait" loading="lazy">
+                </div>
+            </div>
+            <div class="stats">
+                <div class="stat-item">
+                    <div class="stat-number">25</div>
+                    <div class="stat-label">Years Young</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">100+</div>
+                    <div class="stat-label">Locations Explored</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">∞</div>
+                    <div class="stat-label">Passion for Nature</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="channel-story" id="story">
+        <div class="container">
+            <h2 class="section-title">The Birth of Relaxation Station</h2>
+            <div class="story-content">
+                <p>Relaxation Station began as a simple idea during the quietest hours of the evening. I'd spend countless nights exploring New Zealand's most serene locations—native bush trails where ancient trees whisper secrets, quiet beaches where waves create a natural rhythm, rolling farmland bathed in golden light, and peaceful countryside that feels untouched by time.</p>
+
+                <p>I realized that these moments of profound peace—moments where the only sounds you hear are <span class="highlight">birdsong</span>, <span class="highlight">rivers flowing</span>, <span class="highlight">rain gently falling</span>, and <span class="highlight">wind rustling through leaves</span>—were something the world needed more of.</p>
+
+                <p>So I made a commitment: to carefully plan, film, edit, and upload videos that capture <span class="highlight">real environments</span> with <span class="highlight">authentic sounds</span> and the <span class="highlight">natural atmosphere</span> of each location. Every video is created with intention—not just to be pretty, but to actually help you.</p>
+
+                <p>Whether you're looking to study without distractions, relax after a demanding day, fall asleep naturally, or simply take a mental break from the chaos of modern life, Relaxation Station is your sanctuary. From calming walks and historical ambience to the gentle soundscapes of New Zealand's most beautiful landscapes, I've created a space where you can truly switch off and reconnect.</p>
+
+                <h3>Our Vision Moving Forward</h3>
+                <p>My plans for Relaxation Station are ambitious and heartfelt. I want to continue exploring every hidden gem that New Zealand has to offer—from the smallest forest streams to the grandest mountain vistas. I'm committed to expanding into different types of relaxing content: deeper dives into New Zealand's rich history, more specialized ASMR experiences, seasonal explorations, and collaborations with other creators who share this vision of mindful, authentic nature content.</p>
+
+                <p>But most importantly, I want to build a community of people who believe that <span class="highlight">slowing down is not laziness—it's necessity</span>. A place where you can find refuge, inspiration, and genuine peace. Where nature becomes not just a video you watch, but a state of mind you carry with you.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <h2 class="section-title">Visual Journey Through Nature</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="images/nz-bush.jpg" alt="Native Bush Trail" loading="lazy">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/ben-image-2.jpg" alt="Exploring Nature" loading="lazy">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/ben-portrait.png" alt="Forest Portrait" loading="lazy">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/logo.jpg" alt="Relaxation Station Logo" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section" id="contact">
+        <div class="container">
+            <h2>Ready to Find Your Peace?</h2>
+            <p>Join thousands of viewers who have discovered tranquility through Relaxation Station. Subscribe to my YouTube channel for weekly uploads of immersive nature walks, ASMR experiences, and peaceful ambience videos.</p>
+            <a href="https://www.youtube.com/@Official-RelaxationStation/featured" class="btn btn-primary" target="_blank">
+                ▶ Subscribe Now
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Relaxation Station</h3>
+                    <p>Immersive nature ASMR and peaceful walks filmed across New Zealand's most serene landscapes. Carefully planned, filmed, edited, and created with focus on authentic experiences.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <p>
+                        <a href="#home">Home</a><br>
+                        <a href="#about">About</a><br>
+                        <a href="#story">Our Story</a><br>
+                        <a href="#gallery">Gallery</a>
+                    </p>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect With Me</h3>
+                    <div class="social-links">
+                        <a href="https://www.youtube.com/@Official-RelaxationStation/featured" target="_blank" title="YouTube">▶</a>
+                    </div>
+                    <p style="margin-top: 1rem;">Follow for new content releases and peaceful moments from New Zealand.</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Relaxation Station by Ben Crossland. Created with peace and passion for New Zealand's natural beauty. Crafted to help you slow down, switch off, and reconnect with nature.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
